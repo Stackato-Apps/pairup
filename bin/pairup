@@ -118,7 +118,11 @@ function do_init {
     if [[ -n "$PAIRUP_DOTS_CONF_REPO" ]]; then
         mkdir ~/src
         cd ~/src
-        git clone $PAIRUP_DOTS_CONF_REPO
+        if ! git clone $PAIRUP_DOTS_CONF_REPO; then
+            format_as_error "Problem cloning $PAIRUP_DOTS_CONF_REPO - bailing out."
+            rmdir ~/src
+            exit 3
+        fi
         dir=`echo $PAIRUP_DOTS_CONF_REPO | sed 's/.*\/\(.*\)\.git$/\1/'`
         echo $dir/configure
         $dir/configure
