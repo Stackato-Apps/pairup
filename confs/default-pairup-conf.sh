@@ -1,6 +1,6 @@
 PAIRUP_SESSION=pairup-rkingy
 
-PAIRUP_DOTS_CONF_REPO="git@github.com:pairup/pairup-dots-conf.git"
+PAIRUP_DOTS_CONF_REPO="git@github.com:PairUp/pairup-dots-conf.git"
 PAIRUP_INIT_POST_COMMANDS="
 make -C ~/.../src/rking-dots;
 touch ~/.sudo_as_admin_successful;
@@ -81,7 +81,7 @@ sudo apt-get install man-db &
         git pull origin master
     else
         sudo chown -R stackato.stackato .
-        git clone git@github.com:pairup/stackato-pairup-usr-local.git
+        git clone git@github.com:PairUp/stackato-pairup-usr-local.git
         mv stackato-pairup-usr-local/.git .
         rm -fr stackato-pairup-usr-local
         git reset --hard
